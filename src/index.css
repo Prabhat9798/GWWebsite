@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+
+/* Gilroy Font Faces */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./styles//fonts/gilroy/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./styles//fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./styles//fonts/gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./styles//fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./styles//fonts/gilroy/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+/* Apply Gilroy as default font */
+body {
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, sans-serif;
+}
