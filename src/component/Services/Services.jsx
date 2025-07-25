@@ -10,13 +10,13 @@ import travel from "./travel.mp4"
 
 const videos = [
   { src: video1, title: 'Free Counselling' },
-  { src: video2, title: 'Free Counselling' },
-  { src: unapp, title: 'Free Counselling' },
-  { src: university, title: 'Free Counselling' },
-  { src: LOR, title: 'Free Counselling' },
-  { src: courseselection, title: 'Free Counselling' },
-  { src: travel, title: 'Free Counselling' },
-  { src: visa, title: 'Free Counselling' },
+  { src: video2, title: 'Statement of Purpose' },
+  { src: unapp, title: 'Curriculum Vitae' },
+  { src: university, title: 'University Application' },
+  { src: LOR, title: 'Letter of Recommendation' },
+  { src: courseselection, title: 'Course Selection' },
+  { src: travel, title: 'Travel Arrangement' },
+  { src: visa, title: 'Visa Assistance' },
 ];
 
 const Services = () => {
@@ -35,9 +35,11 @@ const Services = () => {
   };
 
   return (
-    <div className="">
+    <div className="mb-4">
       <div className="heading flex items-center justify-center">
-        <h1 className="text-center text-4xl font-bold">Our Services</h1>
+        <h1 
+                      className=" text-center text-4xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent"
+>Our Services</h1>
       </div>
       <div className="w-full flex justify-center mt-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl px-2">
@@ -60,7 +62,7 @@ const Services = () => {
                 {video.title}
               </h3>
               <button
-                className="apply-btn mt-2 px-4 py-2 text-white font-semibold transition"
+                className="apply-btn mt-2 px-4 py-2 text-white font-semibold transition cursor-pointer"
                 style={{
                   background: "linear-gradient(91.44deg, #FF9422 17.06%, #D63715 52.08%)",
                   borderRadius: "10px",
