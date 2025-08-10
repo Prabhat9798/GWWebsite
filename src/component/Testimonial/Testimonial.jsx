@@ -59,7 +59,7 @@ function Testimonal() {
     cssEase: "ease-in-out",
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 940, settings: { slidesToShow: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -128,7 +128,7 @@ function Testimonal() {
       <div className="flex flex-col items-center mb-6">
         <div className="flex items-center justify-center max-w-6xl w-full px-4">
           <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center">
-            What Our Students Say
+            What Our Students 
           </h3>
           <div className="flex gap-2 ml-4">
             <button
