@@ -5,25 +5,25 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TestiCard = ({ item }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-md mx-1 flex flex-col h-full min-h-[350px] sm:min-h-[400px]">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-md mx-1 flex flex-col h-full min-h-[350px] sm:min-h-[380px]">
       <div className="bg-gradient-to-r from-orange-100 to-red-100 p-4 pt-12 sm:pt-16 relative">
         <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
           <img
             src={item.imageSrc}
             alt={item.name}
-            className="w-14 h-14 sm:w-20 sm:h-20 rounded-full border-4 border-white shadow-md object-cover"
+            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-md object-cover"
           />
         </div>
 
-        <div className="text-gray-700 text-sm leading-relaxed min-h-[80px] mt-12">
+        <div className="text-gray-700 text-sm md:text-base leading-relaxed min-h-[80px] mt-12">
           <p>{item.para1}</p>
           <p>{item.para2}</p>
         </div>
       </div>
 
       <div className="px-4 py-3 flex-1">
-        <h3 className="font-bold text-base sm:text-lg text-gray-900">{item.name}</h3>
-        <p className="text-gray-500 italic text-sm sm:text-md">{item.course}</p>
+        <h3 className="font-bold text-base md:text-lg text-gray-900">{item.name}</h3>
+        <p className="text-gray-500 italic text-sm md:text-base">{item.course}</p>
 
         <div className="mt-2 h-10">
           <img
@@ -35,7 +35,7 @@ const TestiCard = ({ item }) => {
       </div>
 
       <div
-        className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 text-sm"
+        className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 text-sm md:text-base"
         onClick={() => window.open(item.videoLink, "_blank")}
       >
         <span className="font-medium">▶ Watch their story</span>
@@ -50,7 +50,7 @@ function Testimonal() {
   const sliderSettings = {
     dots: true,
     arrows: false,
-    slidesToShow: 3,
+    slidesToShow: 3, // Desktop: 3 cards
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -59,17 +59,17 @@ function Testimonal() {
     cssEase: "ease-in-out",
     responsive: [
       { 
-        breakpoint: 1024, 
+        breakpoint: 1024, // Tablet breakpoint
         settings: { 
-          slidesToShow: 2,
+          slidesToShow: 2, // Tablet: 2 cards
           slidesToScroll: 1,
-          dots: false
+          dots: true
         } 
       },
       { 
-        breakpoint: 640, 
+        breakpoint: 768, // Mobile breakpoint
         settings: { 
-          slidesToShow: 1,
+          slidesToShow: 1, // Mobile: 1 card
           slidesToScroll: 1,
           centerMode: true,
           centerPadding: '20px',
@@ -79,7 +79,7 @@ function Testimonal() {
     ],
   };
 
-  const testimonials = [
+   const testimonials = [
     {
       imageSrc: "https://randomuser.me/api/portraits/women/44.jpg",
       name: "Priya Sharma",
@@ -136,9 +136,6 @@ function Testimonal() {
     },
   ];
 
-  const canRenderSlider =
-    typeof Slider === "function" || (Slider && typeof Slider === "object");
-
   return (
     <div className="mb-4 py-6 sm:py-8 px-4">
       <div className="flex flex-col items-center mb-6 sm:mb-8">
@@ -169,23 +166,13 @@ function Testimonal() {
 
       <div className="w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {canRenderSlider ? (
-              <Slider ref={sliderRef} {...sliderSettings}>
-                {testimonials.map((card, index) => (
-                  <div key={index} className="px-2">
-                    <TestiCard item={card} />
-                  </div>
-                ))}
-              </Slider>
-            ) : (
-              <div className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-                The slider component failed to load. Please ensure{" "}
-                <code>react-slick</code> and <code>slick-carousel</code> are
-                installed and imported correctly.
+          <Slider ref={sliderRef} {...sliderSettings}>
+            {testimonials.map((card, index) => (
+              <div key={index} className="px-2">
+                <TestiCard item={card} />
               </div>
-            )}
-          </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>
