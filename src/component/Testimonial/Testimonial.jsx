@@ -48,37 +48,25 @@ function Testimonal() {
   const sliderRef = useRef(null);
 
  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
+    // arrows: true,
+
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
+    speed: 200,
+    infinite: true,
+    cssEase: "ease",
     responsive: [
       {
-        breakpoint: 1024,    // For tablets and smaller laptops
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768,     // For smaller tablets and large phones
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,  // This will make the active slide centered
-          centerPadding: '20px', // Adds some padding on the sides
-        },
-      },
-      {
-        breakpoint: 480,     // For mobile phones
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false, // Disable center mode for very small screens
         },
       },
     ],
