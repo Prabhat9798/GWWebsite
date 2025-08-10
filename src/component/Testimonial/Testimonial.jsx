@@ -58,22 +58,31 @@ function Testimonal() {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024,    // For tablets and smaller laptops
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768,     // For smaller tablets and large phones
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,  // This will make the active slide centered
+          centerPadding: '20px', // Adds some padding on the sides
+        },
+      },
+      {
+        breakpoint: 480,     // For mobile phones
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for very small screens
         },
       },
     ],
   };
-
 
    const testimonials = [
     {
