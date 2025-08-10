@@ -142,7 +142,7 @@ function Testimonal() {
         <div className="w-full max-w-6xl relative">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center sm:text-left mb-4 sm:mb-0">
-              What Our Students Say
+              What Our Students 
             </h3>
             <div className="flex gap-2 sm:absolute sm:right-0">
               <button
