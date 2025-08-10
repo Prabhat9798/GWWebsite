@@ -5,27 +5,32 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TestiCard = ({ item }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-md mx-1 flex flex-col h-full min-h-[350px] sm:min-h-[380px]">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-md mx-1 flex flex-col h-full min-h-[320px] sm:min-h-[380px]">
+      {/* Top section with gradient background */}
       <div className="bg-gradient-to-r from-orange-100 to-red-100 p-4 pt-12 sm:pt-16 relative">
+        {/* Profile image */}
         <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
           <img
             src={item.imageSrc}
             alt={item.name}
-            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-md object-cover"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full border-4 border-white shadow-md object-cover"
           />
         </div>
 
-        <div className="text-gray-700 text-sm md:text-base leading-relaxed min-h-[80px] mt-12">
+        {/* Testimonial text */}
+        <div className="text-gray-700 text-sm md:text-base leading-relaxed min-h-[80px] mt-6 sm:mt-12">
           <p>{item.para1}</p>
           <p>{item.para2}</p>
         </div>
       </div>
 
+      {/* Middle section with name and university */}
       <div className="px-4 py-3 flex-1">
-        <h3 className="font-bold text-base md:text-lg text-gray-900">{item.name}</h3>
-        <p className="text-gray-500 italic text-sm md:text-base">{item.course}</p>
+        <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-900">{item.name}</h3>
+        <p className="text-gray-500 italic text-xs sm:text-sm md:text-base">{item.course}</p>
 
-        <div className="mt-2 h-10">
+        {/* University logo */}
+        <div className="mt-2 h-8 sm:h-10">
           <img
             src={item.university}
             alt="university"
@@ -34,8 +39,9 @@ const TestiCard = ({ item }) => {
         </div>
       </div>
 
+      {/* Bottom CTA button */}
       <div
-        className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 text-sm md:text-base"
+        className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 sm:py-3 flex items-center justify-center gap-1 sm:gap-2 cursor-pointer hover:opacity-90 text-xs sm:text-sm md:text-base"
         onClick={() => window.open(item.videoLink, "_blank")}
       >
         <span className="font-medium">▶ Watch their story</span>
@@ -47,32 +53,47 @@ const TestiCard = ({ item }) => {
 function Testimonal() {
   const sliderRef = useRef(null);
 
- const sliderSettings = {
-    // arrows: true,
-
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 200,
-    infinite: true,
-    cssEase: "ease",
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-        },
+          slidesToScroll: 1,
+          centerMode: false,
+        }
       },
       {
-        breakpoint: 800,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
-        },
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '40px',
+        }
       },
-    ],
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '20px',
+        }
+      }
+    ]
   };
 
-   const testimonials = [
+  const testimonials = [
     {
       imageSrc: "https://randomuser.me/api/portraits/women/44.jpg",
       name: "Priya Sharma",
@@ -130,25 +151,26 @@ function Testimonal() {
   ];
 
   return (
-    <div className="mb-4 py-6 sm:py-8 px-4">
+    <div className="mb-4 py-6 sm:py-8 px-2 sm:px-4">
+      {/* Header section with title and navigation arrows */}
       <div className="flex flex-col items-center mb-6 sm:mb-8">
         <div className="w-full max-w-6xl relative">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center sm:text-left mb-4 sm:mb-0">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center sm:text-left mb-4 sm:mb-0">
               What Our Students Say
             </h3>
             <div className="flex gap-2 sm:absolute sm:right-0">
               <button
                 aria-label="previous"
                 onClick={() => sliderRef.current?.slickPrev?.()}
-                className="p-2 rounded-full bg-gradient-to-r from-[#FF9422] to-[#D63715] text-white hover:opacity-90 hidden sm:block"
+                className="p-1 sm:p-2 rounded-full bg-gradient-to-r from-[#FF9422] to-[#D63715] text-white hover:opacity-90"
               >
                 ◀
               </button>
               <button
                 aria-label="next"
                 onClick={() => sliderRef.current?.slickNext?.()}
-                className="p-2 rounded-full bg-gradient-to-r from-[#FF9422] to-[#D63715] text-white hover:opacity-90 hidden sm:block"
+                className="p-1 sm:p-2 rounded-full bg-gradient-to-r from-[#FF9422] to-[#D63715] text-white hover:opacity-90"
               >
                 ▶
               </button>
@@ -157,11 +179,12 @@ function Testimonal() {
         </div>
       </div>
 
-      <div className="w-full">
+      {/* Slider container */}
+      <div className="w-full px-2 sm:px-0">
         <div className="max-w-6xl mx-auto">
           <Slider ref={sliderRef} {...sliderSettings}>
             {testimonials.map((card, index) => (
-              <div key={index} className="px-2">
+              <div key={index} className="px-1 sm:px-2">
                 <TestiCard item={card} />
               </div>
             ))}
