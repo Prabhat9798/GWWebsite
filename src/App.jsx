@@ -5,6 +5,7 @@ import Services from './component/Services/Services'
 import UniversityScrolling from './component/TopUniversityScrolling/UniversityScrolling'
 import Testimonal from './component/Testimonial/Testimonial'
 import Partners from './component/Partners/Partners'
+import Review from './component/Review/Review'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
     <Testimonal/>
     <Services/>
     <Partners/>
+    <Review/>
 
     </>
   )
