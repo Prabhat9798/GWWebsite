@@ -47,37 +47,33 @@ const TestiCard = ({ item }) => {
 function Testimonal() {
   const sliderRef = useRef(null);
 
-  const sliderSettings = {
+ const sliderSettings = {
     dots: true,
-    arrows: false,
-    slidesToShow: 3, // Desktop: 3 cards
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    speed: 500,
-    infinite: true,
-    cssEase: "ease-in-out",
+    pauseOnHover: true,
     responsive: [
-      { 
-        breakpoint: 1024, // Tablet breakpoint
-        settings: { 
-          slidesToShow: 2, // Tablet: 2 cards
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true
-        } 
+        },
       },
-      { 
-        breakpoint: 768, // Mobile breakpoint
-        settings: { 
-          slidesToShow: 1, // Mobile: 1 card
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: '20px',
-          dots: true
-        } 
+        },
       },
     ],
   };
+
 
    const testimonials = [
     {
@@ -142,7 +138,7 @@ function Testimonal() {
         <div className="w-full max-w-6xl relative">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center sm:text-left mb-4 sm:mb-0">
-              What Our Students 
+              What Our Students Say
             </h3>
             <div className="flex gap-2 sm:absolute sm:right-0">
               <button
