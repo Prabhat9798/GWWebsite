@@ -6,6 +6,7 @@ import UniversityScrolling from './component/TopUniversityScrolling/UniversitySc
 import Testimonal from './component/Testimonial/Testimonial'
 import Partners from './component/Partners/Partners'
 import Review from './component/Review/Review'
+import News from './component/News/News'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
     <Services/>
     <Partners/>
     <Review/>
+    <News/>
 
     </>
   )

@@ -168,7 +168,7 @@ const Review = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-8 py-12">
       <header
         className="text-center mt-6 text-2xl font-bold sm:text-4xl bg-gradient-to-r from-[#ff9422] to-[#d63715] bg-clip-text text-transparent"
         style={{

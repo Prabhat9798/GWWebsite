@@ -43,7 +43,7 @@ const universities = [
 
 const UniversityScrolling = () => {
   return (
-    <div className="my-8 p-4"> {/* Added vertical spacing */}
+    <div className="p-4"> {/* Added vertical spacing */}
       <div className="heading flex items-center justify-center mb-6 md:mb-8"> {/* Added bottom margin */}
         <h3 className="text-center text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent">
           Top Universities
