@@ -58,11 +58,35 @@ function Testimonal() {
     infinite: true,
     cssEase: "ease-in-out",
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { 
+        breakpoint: 1024, 
+        settings: { 
+          slidesToShow: 2,
+          centerMode: false
+        } 
+      },
+      { 
+        breakpoint: 768, 
+        settings: { 
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '40px'
+        } 
+      },
+      { 
+        breakpoint: 480, 
+        settings: { 
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '20px'
+        } 
+      }
     ],
   };
 
+  // const testimonials = [
+  //   // ... (keep your existing testimonials array)
+  // ];
   const testimonials = [
     {
       imageSrc: "https://randomuser.me/api/portraits/women/44.jpg",
@@ -120,15 +144,12 @@ function Testimonal() {
     },
   ];
 
-  const canRenderSlider =
-    typeof Slider === "function" || (Slider && typeof Slider === "object");
-
   return (
     <div className="mb-4 py-8">
       <div className="flex flex-col items-center mb-6">
         <div className="flex items-center justify-center max-w-6xl w-full px-4">
           <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center">
-            What Our Students 
+            What Our Students Say
           </h3>
           <div className="flex gap-2 ml-4">
             <button
@@ -152,21 +173,13 @@ function Testimonal() {
       <div className="w-full flex justify-center mt-6">
         <div className="w-full max-w-6xl px-2">
           <div className="relative">
-            {canRenderSlider ? (
-              <Slider ref={sliderRef} {...sliderSettings}>
-                {testimonials.map((card, index) => (
-                  <div key={index} className="px-1">
-                    <TestiCard item={card} />
-                  </div>
-                ))}
-              </Slider>
-            ) : (
-              <div className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-800">
-                The slider component failed to load. Please ensure{" "}
-                <code>react-slick</code> and <code>slick-carousel</code> are
-                installed and imported correctly.
-              </div>
-            )}
+            <Slider ref={sliderRef} {...sliderSettings}>
+              {testimonials.map((card, index) => (
+                <div key={index} className="px-1">
+                  <TestiCard item={card} />
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
