@@ -98,16 +98,16 @@ function Testimonal() {
         breakpoint: 768, 
         settings: { 
           slidesToShow: 1,
-          centerMode: true,
-          centerPadding: '40px'
+          centerMode: false,
+          centerPadding: '0px'
         } 
       },
       { 
         breakpoint: 480, 
         settings: { 
           slidesToShow: 1,
-          centerMode: true,
-          centerPadding: '20px'
+          centerMode: false,
+          centerPadding: '0px'
         } 
       }
     ],
