@@ -59,7 +59,7 @@ const Review = () => {
 
   const ReviewCard = ({ review }) => {
     return (
-      <div className="bg-white text-left rounded-lg shadow-lg p-6 h-full flex flex-col justify-between">
+      <div className="bg-white text-left rounded-lg  p-6 h-full flex flex-col justify-between">
         <div className="flex items-center mb-4">
           <div
             className={`w-12 h-12 ${review.backgroundColor} rounded-full flex items-center justify-center text-white text-3xl font-semibold`}

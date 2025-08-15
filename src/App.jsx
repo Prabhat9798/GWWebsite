@@ -19,7 +19,6 @@ const App = () => {
     <Partners/>
     <Review/>
     <News/>
-
     </>
   )
 }
