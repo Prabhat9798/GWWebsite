@@ -7,6 +7,8 @@ import Testimonal from './component/Testimonial/Testimonial'
 import Partners from './component/Partners/Partners'
 import Review from './component/Review/Review'
 import News from './component/News/News'
+// import MultiCardSlider from './component/MultiCardSlider'
+import CardSlider from './component/CardSlider'
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
     <Partners/>
     <Review/>
     <News/>
+    {/* <CardSlider/> */}
     </>
   )
 }
