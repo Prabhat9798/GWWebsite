@@ -153,7 +153,10 @@ const ChevronRightIcon = (props) => (
 // --- Testimonial Card Component ---
 const TestimonialCard = ({ item }) => {
   return (
-    <div className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
+    <div className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4 h-full"
+    style={{
+      fontFamily:"Gilroy"
+    }}>
       <div className="bg-white rounded-xl h-full flex flex-col transform transition duration-300 hover:-translate-y-1 border border-gray-200/80">
         <div className="p-6 pt-4 relative bg-gradient-to-r from-orange-50 to-red-50 rounded-t-xl">
           <div className="absolute top-3 left-6 w-24 h-24">
@@ -231,7 +234,8 @@ export default function Testimonial() {
   };
 
   return (
-    <div className="bg-slate-50 font-sans py-16 sm:py-24">
+    <div className="bg-slate-50 font-sans py-16 sm:py-24"
+     style={{fontFamily:"Gilroy"}}>
       <div className="container mx-auto px-4">
         {/* Header Section - Centered */}
         <div className="flex flex-col items-center justify-center mb-8 gap-4">

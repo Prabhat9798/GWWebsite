@@ -75,7 +75,10 @@ const StarRating = ({ rating }) => {
 // --- Testimonial Card Component (Updated Design) ---
 const TestimonialCard = ({ item }) => {
   return (
-    <div className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-2">
+    <div className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-2"
+    style={{
+      fontFamily:"Gilroy"
+    }}>
         <div className="bg-white rounded-xl shadow-lg flex flex-col h-full">
             <div className="p-6 flex-grow">
                 <div className="flex items-center mb-4">
@@ -97,7 +100,8 @@ const TestimonialCard = ({ item }) => {
 const RatingSection = () => {
     return (
       <div className="text-center my-8">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4"
+        style={{fontFamily:"Gilroy"}}>
           <img
             src="https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png"
             alt="Google Logo"
@@ -159,7 +163,8 @@ export default function App() {
   };
 
   return (
-    <div className="bg-slate-50 font-sans py-16 sm:py-24">
+    <div className="bg-slate-50 font-sans py-16 sm:py-24"
+    style={{fontFamily:"Gilroy"}}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center mb-4 gap-4">
             <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#D63715] to-[#FF9422] bg-clip-text text-transparent text-center">

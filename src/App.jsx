@@ -9,6 +9,7 @@ import Review from './component/Review/Review'
 import News from './component/News/News'
 // import MultiCardSlider from './component/MultiCardSlider'
 import CardSlider from './component/CardSlider'
+import Footer from './component/Footer/Footer'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
     <Partners/>
     <Review/>
     <News/>
+    <Footer/>
     {/* <CardSlider/> */}
     </>
   )
